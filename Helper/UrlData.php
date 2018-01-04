@@ -21,4 +21,40 @@ class UrlData {
     //if merchant didnt provide, we use default
     const SUCCESS_URL = 'checkout/onepage/success';
     const FAIL_URL = 'checkout/onepage/failure';
+
+    public function getApiUrl($mode) {
+        if ($mode == 'yes' || $mode == 1) {
+            return self::URL;
+        } else {
+            return self::URL_TEST;
+        }
+    }
+
+    public function getRenderUrl($mode) {
+        if ($mode == 'yes' || $mode == 1) {
+            return self::RENDER_URL;
+        } else {
+            return self::RENDER_URL_TEST;
+        }
+    }
+
+    public function getLoadingImgUrl($mode) {
+        if ($mode == 'yes' || $mode == 1) {
+            return self::LOADING_IMAGE_URL;
+        } else {
+            return self::LOADING_IMAGE_URL_TEST;
+        }
+    }
+
+    public function getNotifyUrl($mode) {
+        return self::NOTIFICATION_URL;
+    }
+
+    public function getSuccessUrl($mode) {
+        return self::SUCCESS_URL;
+    }
+
+    public function getFailUrl($mode) {
+        return self::FAIL_URL;
+    }
 }

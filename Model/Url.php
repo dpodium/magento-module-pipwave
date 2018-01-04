@@ -17,42 +17,33 @@ class Url extends AbstractMethod
     }
 
     function getUrl($test_mode) {
-        if ($test_mode == 'yes' || $test_mode == 1) {
-            $url = $this->UrlHelper::URL_TEST;
-        } else {
-            $url = $this->UrlHelper::URL;
-        }
+        $url = $this->UrlHelper->getApiUrl($test_mode);
         return $url;
     }
 
     function getRenderUrl($test_mode) {
-        if ($test_mode == 'yes' || $test_mode == 1) {
-            $url = $this->UrlHelper::RENDER_URL_TEST;
-        } else {
-            $url = $this->UrlHelper::RENDER_URL;
-        }
+        $url = $this->UrlHelper->getRenderUrl($test_mode);
         return $url;
     }
 
     function getLoadingImageUrl($test_mode) {
-        if ($test_mode == 'yes' || $test_mode == 1) {
-            $url = $this->UrlHelper::LOADING_IMAGE_URL_TEST;
-        } else {
-            $url = $this->UrlHelper::LOADING_IMAGE_URL;
-        }
+        $url = $this->UrlHelper->getLoadingImgUrl($test_mode);
         return $url;
     }
 
     function defaultSuccessPageUrl() {
-        return $this->urlBuilder->getUrl($this->UrlHelper::SUCCESS_URL);
+        $url = $this->UrlHelper->getSuccessUrl();
+        return $this->urlBuilder->getUrl($url);
     }
 
     function defaultFailPageUrl() {
-        $temp = $this->urlBuilder->getUrl($this->UrlHelper::FAIL_URL);
+        $url = $this->UrlHelper->getFailUrl();
+        $temp = $this->urlBuilder->getUrl($url);
         return $temp;
     }
 
     function notificationPageUrl() {
-        return $this->urlBuilder->getUrl($this->UrlHelper::NOTIFICATION_URL);
+        $url = $this->UrlHelper->getNotifyUrl();
+        return $this->urlBuilder->getUrl($url);
     }
 }

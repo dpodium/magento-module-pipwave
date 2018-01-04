@@ -1,7 +1,7 @@
 <?php
 namespace Dpodium\Pipwave\Model;
 
-use \Magento\Pipwave\Block\InformationNeeded as Information;
+use \Dpodium\Pipwave\Block\InformationNeeded as Information;
 
 class AdditionalConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
 {
