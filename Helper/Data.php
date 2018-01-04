@@ -4,6 +4,7 @@ namespace Dpodium\Pipwave\Helper;
 //admin configuration data
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
+    protected $scopeConfig;
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
@@ -12,7 +13,6 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $this->scopeConfig = $scopeConfig;
     }
 
-    protected $scopeConfig;
     //from etc\adminhtml\system.xml
     const API_KEY = 'payment/pipwave/api_key';
     const API_SECRET = 'payment/pipwave/api_secret';
